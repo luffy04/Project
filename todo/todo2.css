@@ -1,0 +1,55 @@
+/*#result{*/
+    /*margin-left: 28%;*/
+    /*margin-top: 2%;*/
+    /**/
+    /*border:1px solid slategrey;*/
+    /*border-radius: 0.25rem;*/
+    /*padding:2px;*/
+/*}*/
+
+#btn{min-height:28px;
+    border-radius: 0.25rem;
+    color:white;
+    background-color: chartreuse;
+    border:1px solid chartreuse;
+}
+#list{color: darkcyan;
+    list-style-type: disc;
+    margin-bottom: 1%;
+}
+.upper{
+    color: darkcyan ;
+    font-size:75px;
+    letter-spacing: 2px;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+.down{color: cornflowerblue;
+    font-size: 24px;
+    margin-left: -11%;
+    margin-top: 2%;
+}
+.intro{
+    font-size: 18px;
+    margin-top: 4%;
+    letter-spacing: normal;
+}
+#ph{
+    margin-left: 28%;
+    margin-top: 2%;
+    min-width: 46%;
+    min-height: 28px;
+    border:1px solid slategrey;
+    border-radius: 0.25rem;
+    padding:2px;
+}
+/*#result  {*/
+    /*margin-left: 28%;*/
+    /*margin-top: 2%;*/
+
+
+    /*border-radius: 0.25rem;*/
+
+    /*padding: 2px;*/
+    /*}*/
+
