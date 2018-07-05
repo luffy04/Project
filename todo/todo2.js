@@ -2,6 +2,7 @@
  document.body.onload = addElement;
 var i;
  var x;
+ var y = window.matchMedia("(max-width: 957px)")
 var todolist=[];
 function addElement () {
     var btn = document.getElementById("btn");
@@ -27,52 +28,108 @@ function addElement () {
         li.appendChild(button4);
         var span3 = document.createTextNode("Undo:");
         button.id = todolist.length + 1;
+        button2.id=todolist.length+2;
+        button3.id=todolist.length+3;
+        button4.id=todolist.length+4;
         span2.appendChild(span3);
-
-        var butoon3 = document.createTextNode("yes");
-        var butoon4 = document.createTextNode("no");
+        var butoon3 = document.createTextNode("");
+        var butoon4 = document.createTextNode("");
         button3.appendChild(butoon3);
         button4.appendChild(butoon4);
         var inpVal = document.createTextNode(ph.value);
         span.appendChild(inpVal);
+
+        input.style.position="absolute";
+        input.style.top="32%";
+
+
+        span.style.position="absolute";
+        span.style.top="32%";
+
+
         if(ph.value) {
 
             result.appendChild(li);
-            if(todolist.length==-1){
-                result.style.border="0";
-            }
-            else{result.style.border="1px solid blue";}
 
-            result.style.marginLeft="28%";
-            li.style.height="30px";
-           // li.style.marginBottom="4px";
+
+           // result.style.marginLeft="28%";
+            li.style.position="relative";
+            li.style.height="40px";
             li.style.padding="2% 2%";
             result.style.borderRadius="0.25rem";
             result.style.width="45%";
-            span.style.padding="2% 2%";
-            //li.style.marginBottom="2px";
+            if(todolist.length!=-1){
+                result.style.border="1px solid blue";
+            }
+            else{result.style.border="0px solid white";
+            }
+            function myfunction(y){
+            if(y.matches){
+                span2.style.display="none";
+            }
+                else{
+                span2.style.display="block";
+            }
+
+            }
+
             for(i=0;i<(todolist.length+1);i++){
                 if(i%2!=0){
-                    li.style.backgroundColor="aqua";
+                    li.style.backgroundColor="lightseagreen";
                 }
                 else{
-                    li.style.backgroundColor="blue";
+                    li.style.backgroundColor="darkcyan";
                 }
             }
             //li.style.display="flex";
             button.style.height="35px";
-            button.style.width="35px"
+            button.style.width="35px";
+            button.style.border="0px";
+            button.setAttribute("title","Update");
+            button2.setAttribute("title","Delete");
+            button3.setAttribute("title","Undo");
+            button4.setAttribute("title","Cancel");
+            button2.style.border="0px";
+            button3.style.border="0px";
+            button4.style.border="0px";
             button2.style.height="35px";
-            button2.style.width="35px"
+            button2.style.width="35px";
 
-            button.style.marginLeft="45%";
-            button2.style.marginLeft="1%";
+            button.style.position="absolute";
+            button.style.top="22%";
+            button.style.right="52px";
+            button2.style.position="absolute";
+            button2.style.top="22%";
+            button2.style.right="10px";
+            span2.style.position="absolute";
+            span2.style.left="64%";
+            span2.style.top="38%";
+            button3.style.position="absolute";
+            button3.style.top="22%";
+            button3.style.left="73%";
+            button4.style.position="absolute";
+            button4.style.top="22%";
+            button4.style.left="80%";
 
-            //button.style.background="url('Edit.ico')";
+            button.style.background="url('edit.png')";
+            button2.style.background="url('rubbish-bin.png')";
+
+            button3.style.height="35px";
+            button3.style.width="7% ";
+            button4.style.height="35px";
+            button4.style.width="35px";
+
+            button3.style.background="url('gh.png')";
+            button3.style.backgroundRepeat="no-repeat";
+            button3.style.backgroundPosition="center";
+            button4.style.background="url('cross.png')";
+            button4.style.backgroundRepeat="no-repeat";
+            button4.style.backgroundPosition="center";
+            myfunction(y);
+            y.addListener(myfunction);
         }
         button3.onclick = yes;
         button.onclick = update;
-
 
         button4.onclick = no;
         span.onclick = change;
@@ -87,35 +144,43 @@ function addElement () {
         var butoon2 = document.createTextNode("");
         button2.appendChild(butoon2);
         todolist.push(span);
-        console.log(todolist.length);
-
         function update1() {
 
             var element = this;
             li.style.display = "none";
 
+        }
+        function update() {
+            var element = this;
+            var f = element.nextElementSibling;
+            var g = f.nextElementSibling;
+            var h = g.nextElementSibling;
+            var i = h.nextElementSibling;
+            var a = element.previousElementSibling;
+            var val = a.previousElementSibling.value;
+
+            if (val) {
+                a.style.left="1%";
+                a.textContent=val;
+                todolist[element.id-1].textContent=val;
+                a.previousElementSibling.type="hidden";
+                g.style.display = "inline-block";
+                h.style.display = "inline-block";
+                i.style.display = "inline-block";
+                element.style.display="none";
+                f.style.display="none";
+                a.style.position="relative";
+
+
             }
-
         }
+
+        //return button.id ,button2.id,button3.id , button4.id;
+        }
+
     }
 
-    function update() {
-        var element = this;
-        var f = element.nextElementSibling;
-        var g = f.nextElementSibling;
-        var h = g.nextElementSibling;
-        var i = h.nextElementSibling;
-        var a = element.previousElementSibling;
-        var val = a.previousElementSibling.value;
-        if (val) {
-            a.textContent=val;
-            todolist[element.id-1].textContent=val;
-            a.previousElementSibling.type="hidden";
-            g.style.display = "inline-block";
-            h.style.display = "inline-block";
-            i.style.display = "inline-block";
-        }
-    }
+
     function yes(){
         var element=this;
         var e=element.nextElementSibling;
@@ -127,22 +192,31 @@ function addElement () {
         element.style.display="none";
         a.style.display="none";
         e.style.display="none";
+        b.style.display="block";
+        c.style.display="block";
+
 
     }
 
     function change() {
         var element = this;
         element.previousElementSibling.type = "text";
-
+        element.style.left="32.5%";
          x=element.textContent;
         element.previousElementSibling.value="";
+        var a=element.previousElementSibling;
+        a.style.width="29%";
     }
 
     function no(){
         var element=this;
         var a=element.previousElementSibling;
         var b= a.previousElementSibling;
+        var c=b.previousElementSibling;
+        var d=c.previousElementSibling;
         this.style.display="none";
         a.style.display="none";
         b.style.display="none";
+        c.style.display="block";
+        d.style.display="block";
     }

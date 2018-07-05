@@ -1,55 +1,132 @@
-/*#result{*/
-    /*margin-left: 28%;*/
-    /*margin-top: 2%;*/
-    /**/
-    /*border:1px solid slategrey;*/
-    /*border-radius: 0.25rem;*/
-    /*padding:2px;*/
-/*}*/
+.parent{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width:99%;
+    height:313px;
 
-#btn{min-height:28px;
+
+}
+#btn{position: absolute;
+    min-height:28px;
+    top:114%;
+    left:75%;
     border-radius: 0.25rem;
     color:white;
     background-color: chartreuse;
     border:1px solid chartreuse;
 }
-#list{color: darkcyan;
+#list{color: darkorchid;
     list-style-type: disc;
     margin-bottom: 1%;
 }
 .upper{
+    position: absolute;
     color: darkcyan ;
     font-size:75px;
     letter-spacing: 2px;
-    margin-left: 35%;
-    margin-top: 5%;
+    left:36.5%;
+    top:22%;
+    text-align: center;
+    display: inline-flex;
 }
-.down{color: cornflowerblue;
+.down{
+    position: absolute;
+    color: cornflowerblue;
     font-size: 24px;
-    margin-left: -11%;
-    margin-top: 2%;
+    letter-spacing: 1px;
+    left:31%;
+    top:56%;
+    text-align: center;
+    display: inline-flex;
 }
 .intro{
+    position: absolute;
     font-size: 18px;
-    margin-top: 4%;
     letter-spacing: normal;
+    left:28%;
+    top:69%;
+
+/*.intro li{*/
+    /*display:inline-flex;*/
+/*}*/
 }
 #ph{
-    margin-left: 28%;
-    margin-top: 2%;
+    position: absolute;
     min-width: 46%;
+    top:113%;
+    left:28%;
     min-height: 28px;
     border:1px solid slategrey;
     border-radius: 0.25rem;
     padding:2px;
 }
-/*#result  {*/
-    /*margin-left: 28%;*/
-    /*margin-top: 2%;*/
+#result{
+    position: absolute;
+    top:124%;
+    left:28%;
+}
 
 
-    /*border-radius: 0.25rem;*/
+@media(max-width: 1035px){
+.parent{
+    width:90%;
+    right:12%;
+}
+}
 
-    /*padding: 2px;*/
-    /*}*/
+@media (max-width: 921px){
+    .parent{
+            right:15%;
+    }
+    .intro{
+        position: absolute;
+        left:20%;
+    }
+}
 
+@media (max-width: 733px){
+    .parent{
+        left:2%;
+    }
+    .down{
+        left:23%;
+    }
+    .upper{
+        left:33%;
+    }
+
+}
+@media(max-width: 660px){
+    .down{
+        left:12%;
+        font-size: 22px;
+    }
+    .upper{
+        left:22%;
+    }
+    #ph{
+
+        width:80%;
+        left:7%;
+    }
+    #btn{
+
+        left:89%;
+    }
+    #result{
+
+        left: 7%;
+        min-width:82%;
+        z-index: 1;
+    }
+    .intro{
+        left:4%;
+        top:68%;
+        font-size: 17px;
+        z-index: 1;
+    }
+    .intro li{
+        padding-bottom: 6px;
+    }
+}
