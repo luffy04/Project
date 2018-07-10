@@ -1,0 +1,169 @@
+.father{
+    width:99%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
+.title{
+    position: absolute;
+    width:99%;
+    text-align: center;
+    font-size: 119px;
+    color:blueviolet;
+}
+.parent{
+    position: absolute;
+    width:99%;
+    text-align: center;
+    font-size: 25px;
+    top: 175px;
+    color: #007bff;
+}
+#inp{
+    height:23px;
+    border-radius: 0.25em;
+    position: absolute;
+    top:258px;
+    left:29%;
+    width:36%;
+}
+#btn{
+    position: absolute;
+    height:23px;
+    border-radius: 0.25em;
+    color:white;
+    background: chartreuse;
+    border: 1px solid chartreuse;
+    top:258px;
+    left:66%;
+}
+#bar{
+    position: absolute;
+    width:78%;
+    /*height:px;*/
+    left:11%;
+    top:300px;
+}
+#result{
+    /*border:1px solid black;*/
+    position: absolute;
+    top:312px;
+    width:75%;
+    left:11%;
+}
+.no{
+    position: absolute;
+    left:0%;
+    width:4%;
+    text-align: center;
+}
+.name{
+    position: absolute;
+    left:4%;
+    width:43%;
+    text-align: center;
+}
+.attend{
+    position: absolute;
+    left:47%;
+    width:8%;
+    text-align: center;
+}
+.days{
+    position: absolute;
+    left:57%;
+    width:43%;
+    text-align: center;
+}
+li{ height:20px;
+    border-radius: 0.25em;
+    padding:14px 11px;
+    list-style-type: decimal;
+    margin-bottom: 0px;
+
+}
+ul li:nth-child(odd){
+    background-color: #007bff;
+}
+ul li:nth-child(even){
+    background-color: hotpink;
+}
+#input1{
+    width:26%;
+}
+#span{
+    position: absolute;
+    text-align: center;
+    width:42%;
+}
+#attendance{
+    position: absolute;
+    left:49%;
+    width:5%;
+    text-align: center;
+
+    background-color: cornflowerblue;
+    border-radius: 0.25em;
+}
+
+#update{
+    background: url("icon%20(2).png");
+    background-repeat: no-repeat;
+    height:24px;
+    border:0px;
+    width:5%;
+    position: absolute;
+    left:75%;
+}
+#update:hover{
+    background: url("icon%20(3).png");
+    background-repeat: no-repeat;
+}
+#delete{
+    background: url("rubbish-bin%20(1).png");
+    background-repeat: no-repeat;
+    height:24px;
+    border:0px;
+    width:5%;
+    position: absolute;
+    left:89%;
+}
+#delete:hover{
+    background: url("man-and-trash-container.png");
+    background-repeat: no-repeat;
+}
+#tick{
+    background: url("checked.png");
+    background-repeat: no-repeat;
+    height:33%;
+    width:4%;
+    border:0px;
+    position: absolute;
+    left:96%;
+}
+#tick:hover{
+    background: url("check.png");
+    background-repeat: no-repeat;
+}
+#present{
+    background: url("icon%20(5).png");
+    background-repeat: no-repeat;
+    height:24px;
+    width:4%;
+    position:absolute;
+    left:83%;
+    border:0px;
+}
+#present:hover{
+    background: url("icon%20(4).png");
+    background-repeat:no-repeat ;
+}
+#absent{background: url("cancel%20(1).png");
+    background-repeat: no-repeat;
+    height:24px;
+    width:5%;
+    position: absolute;
+    left:88%;
+    border:0px;
+    color: red;
+  }
