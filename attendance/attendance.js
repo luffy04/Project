@@ -1,14 +1,17 @@
-var z=0;
+var z=[];
+var w=[];
 var x;
 var i;
+var todolist=[];
+
 $(document).ready(function(){
     var input=$('#inp');
     var btn=$('#btn');
     var result=$('#result');
     var bar=$('#bar');
-    var todolist=[];
-    var times=['0'];
-    var times2=['0'];
+
+    let times=['0'];
+    let times2=['0'];
     btn.click(function(){
 
         var value=`<li>
@@ -23,16 +26,28 @@ $(document).ready(function(){
                         <button id="absent" hidden="hidden" onclick="Absent(this)"></button>
                         </li>`;
         x=bar;
+
         if(input.val()) {
             result.append(value);
 
         }
-        todolist.push(result);
-        console.log(todolist.length);
+        todolist.push(value);
+                z.length=todolist.length;
+                for(i=0;i<todolist.length;i++){
+            z[i]=0;
+        }
+        for(i=0;i<todolist.length;i++){
+            w[i]=0;
+        }
+
+        for(i=0;i<todolist.length;i++) {
+            z[i]=z[i]+i;
+        }
     })
 })
 function changeType(el){
     $(el).prev().attr('type','text');
+    console.log(z.length);
 }
 function update(el){
     var val=$(el).prev().prev().prev().prev().val();
@@ -54,17 +69,28 @@ function tick(el){
 }
 
 function Present(el){
-    val1();
-    var d=$(el).prev().prev().prev().prev().val()+z;
-    var c=$(el).prev().prev().prev().prev().prev().text(d);
+    console.log($(el).parent().index());
+    for(i=0;i<todolist.length;i++) {
+        if (($(el).parent().index()) === z[i]) {
+             val1();
+            let d = $(el).prev().prev().prev().prev().val() + w[i];
+            console.log(d);
+            var c=$(el).prev().prev().prev().prev().prev().text(d);
+            console.log(c);
+        }
+    }
+        console.log(z);
+        console.log(w);
     $(el).next().hide();
     x.show();
     $(el).prev().prev().show();
     $(el).prev().prev().prev().show();
+
 }
 
 function val1(){
-    z++;
+    w[i]=w[i]+1;
+
 }
 
 function Absent(el){
